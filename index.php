@@ -12,29 +12,6 @@ include 'includes/class-autoload.inc.php';
 </head>
 
 <body>
-    <p> This is a paragraph!</p>
-    <?php
-    // echo "<p> This is also a paragraph!</p>"; 
-
-    // echo 'I\'m learning PHP!';
-
-    // if ("10" !== 10) {
-    //     echo "Not the same data type!";
-    // }
-
-    // $person1 = new Person("Cody", "Brown", 29);
-    // echo $person1->getName();
-    // echo $person1->getDA();
-
-
-
-    // const TACOSAREGOOD = true;
-
-    // $object = new NewClass;
-    // unset($object);
-    // echo $object->getProperty();
-    ?>
-    <p> This is a paragraph!</p>
     <form action="includes/calc.inc.php" method="post">
 <p>My Calculator</p>
 <input type="number" name="num1" placeholder="First number">
