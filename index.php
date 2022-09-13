@@ -1,6 +1,11 @@
 <?php
 declare(strict_types =1);
 include 'includes/class-autoload.inc.php';
+include_once "abstract/paymenttypes.abstract.php";
+include_once "classes/BuyProducts.class.php";
+
+$buyProduct = new BuyProduct();
+echo $buyProduct->getPayment();
 ?>
 
 <!DOCTYPE html>
