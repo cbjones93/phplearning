@@ -38,3 +38,96 @@ class Calc
         }
     }
 }
+
+// class FirstClass {
+//     const EXAMPLE = "You can't change this.";
+
+//     public static function test() {
+//         $testing = "This is a test.";
+//         return $testing;
+//     }
+// }
+
+// // $a = FirstClass::test();
+// // echo $a;
+
+// class SecondClass extends FirstClass {
+//     public static $staticProperty = "A static property.";
+
+//     public static function anotherTest() {
+//         echo parent::EXAMPLE;
+//         echo self::$staticProperty;
+//     }
+// }
+
+// $b = SecondClass::anotherTest();
+// echo $b;
+
+interface PaymentInterface
+{
+    public function payNow();
+}
+interface LoginInterface
+{
+    public function loginFirst();
+}
+class Paypal implements PaymentInterface, LoginInterface
+{
+    public function loginFirst()
+    {
+    }
+    public function payNow()
+    {
+    }
+    public function paymentProcess()
+    {
+        $this->loginFirst();
+        $this->payNow();
+    }
+}
+class BankTransfer implements PaymentInterface, LoginInterface
+{
+    public function loginFirst()
+    {
+    }
+    public function payNow()
+    {
+    }
+    public function paymentProcess()
+    {
+        $this->loginFirst();
+        $this->payNow();
+    }
+}
+class Visa implements PaymentInterface
+{
+    public function payNow()
+    {
+    }
+    public function paymentProcess()
+    {
+        $this->payNow();
+    }
+}
+class Cash implements PaymentInterface
+{
+    public function payNow()
+    {
+    }
+    public function paymentProcess()
+    {
+        $this->payNow();
+    }
+}
+
+class BuyProduct
+{
+    public function pay(PaymentInterface $paymentType)
+    {
+       $paymentType->payNow();
+    }
+}
+
+$paymentType = new Paypal();
+$buyProduct = new BuyProduct();
+$buyProduct->pay($paymentType);
